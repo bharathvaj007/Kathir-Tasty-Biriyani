@@ -27,14 +27,14 @@ const menuCategories = [
     items: [
       {
         name: "Mutton Biryani",
-        description: "Our signature dish — tender mutton slow-cooked with aromatic basmati rice, saffron, and secret spices.",
+        description: "Our signature dish — tender mutton slow-cooked with aromatic seeragasamba rice and secret spices.",
         price: "₹280",
         image: muttonBiryani,
         tag: "Bestseller",
       },
       {
         name: "Chicken Biryani",
-        description: "Juicy chicken pieces layered with fragrant rice, fried onions, and fresh herbs.",
+        description: "Juicy chicken pieces layered with fragrant Seeraga Samba rice, served with onions and flavorful thalicha for an authentic taste.",
         price: "₹190",
         image: chickenBiryani,
       },

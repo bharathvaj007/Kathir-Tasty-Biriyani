@@ -2,7 +2,7 @@
 import { useState, useContext, useEffect } from "react";
 import { ThemeContext } from "../App";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, UtensilsCrossed, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
@@ -25,9 +25,15 @@ const Navbar = () => {
           <Link to="/" className="flex items-center gap-3">
             <motion.div
               whileHover={{ rotate: 180 }}
-              className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-spice-gradient flex items-center justify-center"
+              /* Changed background to white, added a subtle border and shadow */
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md border border-gray-200 dark:border-gray-700 flex items-center justify-center overflow-hidden p-1"
             >
-              <UtensilsCrossed size={20} className="text-white" />
+              <img 
+                src="/logo.png" 
+                alt="Kathir Tasty Biryani" 
+                /* Changed to object-contain so the logo text isn't cut off */
+                className="w-full h-full object-contain"
+              />
             </motion.div>
             <span className="text-xl md:text-2xl font-display font-bold text-gradient-gold">
               Kathir Tasty Biryani
@@ -83,7 +89,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* MOBILE MENU CONTENT - THIS WAS MISSING */}
+      {/* MOBILE MENU CONTENT */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

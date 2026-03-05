@@ -119,8 +119,8 @@ const AboutPage = () => {
 
               <div className="space-y-6">
                 {[
-                  { icon: MapPin, title: "Address", content: "KK Nagar Main Road, Near Bus Stop, Trichy, Tamil Nadu 620021" },
-                  { icon: Phone, title: "Phone", content: "+91 98765 43210", isLink: true },
+                  { icon: MapPin, title: "Address", content: "3rd Main Rd, Renga Nagar, Krishna Moorthy Nagar, K K Nagar, Tiruchirappalli, Tamil Nadu 620021" },
+                  { icon: Phone, title: "Phone", content: "+91 90035 54341", isLink: true },
                   { icon: Clock, title: "Hours", content: "Mon – Sun: 11:00 AM – 11:00 PM" }
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-5" data-aos="fade-up" data-aos-delay={i * 100}>

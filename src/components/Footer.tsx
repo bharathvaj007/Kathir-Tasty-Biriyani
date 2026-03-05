@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Phone, MapPin, Clock, ExternalLink, UtensilsCrossed } from "lucide-react";
+// Removed UtensilsCrossed from imports
+import { Phone, MapPin, Clock, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -36,13 +37,21 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
           
           {/* Section 1: Brand */}
-          <motion.div var={itemVariants} className="space-y-4">
+          {/* Fixed typo: changed 'var' to 'variants' so animation works */}
+          <motion.div variants={itemVariants} className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-spice-gradient flex items-center justify-center shadow-lg">
-                <UtensilsCrossed size={20} className="text-white" />
+              
+              {/* Updated Logo Container */}
+              <div className="w-12 h-12 rounded-full bg-white shadow-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center overflow-hidden p-1 shrink-0">
+                <img 
+                  src="/logo.png" 
+                  alt="Kathir Tasty Biriyani Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
+
               <h3 className="text-2xl font-display font-bold text-gradient-gold">
-                KK Biryani House
+                Kathir Tasty Biriyani
               </h3>
             </div>
             <p className="font-body text-sm leading-relaxed opacity-80 max-w-xs">
@@ -79,7 +88,7 @@ const Footer = () => {
             <div className="flex flex-col gap-4 text-sm">
               <motion.div whileHover={{ x: 5 }} className="flex items-start gap-3">
                 <MapPin size={18} className="text-saffron mt-1 shrink-0" />
-                <span>KK Nagar Main Road, Near Bus Stop, Trichy, Tamil Nadu</span>
+                <a href="https://www.google.com/maps/place/Kathir+Tasty+Biriyani/@10.7673836,78.6804916,17z/data=!3m1!4b1!4m6!3m5!1s0x3baa8b44775566bb:0xa94dc3cbea01d3b1!8m2!3d10.7673836!4d78.6830665!16s%2Fg%2F11sqfdpz_2?entry=ttu&g_ep=EgoyMDI2MDMwMi4wIKXMDSoASAFQAw%3D%3D">3rd Main Rd, Renga Nagar, Krishna Moorthy Nagar, K K Nagar, Tiruchirappalli, Tamil Nadu 620021</a>
               </motion.div>
               
               <motion.div whileHover={{ x: 5 }} className="flex items-center gap-3">
@@ -131,7 +140,7 @@ const Footer = () => {
 
           <div className="text-center space-y-2">
             <p className="font-sans text-[10px] opacity-40 uppercase tracking-[0.2em]">
-              © 2026 KK Biryani House. Crafted with ❤️ in Trichy.
+              © 2026 Kathir tasty biriyani. Crafted with ❤️ in Trichy.
             </p>
           </div>
         </motion.div>

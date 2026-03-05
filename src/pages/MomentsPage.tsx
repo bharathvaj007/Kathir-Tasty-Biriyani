@@ -13,10 +13,18 @@ import chickenBiryani from "@/assets/chicken-biryani.jpg";
 import tandooriChicken from "@/assets/tandoori-chicken.jpg";
 
 const moments = [
-  { title: "1000th Biryani Order", desc: "A proud moment for our small kitchen that started as a family dream.", image: momentCelebration, date: "March 2024" },
-  { title: "Local Food Festival", desc: "Our Mutton Biryani was the star attraction at the Trichy Food Festival.", image: heroBiryani, date: "Jan 2025" },
-  { title: "Celebrity Chef Visit", desc: "A renowned chef praised our traditional dum cooking method.", image: originStory, date: "Aug 2025" },
-  { title: "Grand Renovation", desc: "Modern equipment while keeping our traditional clay oven soul.", image: chickenBiryani, date: "Nov 2025" },
+  { title: "A Star-Worthy Taste from Trichy ⭐", desc: "Our biryani has won the hearts of countless food lovers in Trichy. We are proud to say that if popular Tamil film actor Sivakarthikeyan ever visits Trichy, Kathir Biryani would be one of the places he would love to order from. The authentic taste of our Seeraga Samba biryani, prepared with family recipes and passion, makes every plate truly special.", image: momentCelebration,},
+  {
+  title: "A Memorable Visit by Director S. Shankar",
+  desc: `It was a proud and unforgettable moment for us when renowned film director S. Shankar visited Kathir Biryani during his time in Trichy. Known for creating some of the most iconic films in Indian cinema, his visit brought great excitement to our team.
+We were honored to serve our signature Seeraga Samba biryani, prepared with our traditional family recipe and passion. Moments like these inspire us to continue delivering authentic taste and warm hospitality to every guest who walks through our doors.`,
+  image: heroBiryani
+},
+{ title: "A Special Visit by Kanaa Director Arunraja Kamaraj", desc: `It was a delightful moment for us when Arunraja Kamaraj, the director of the inspiring Tamil film Kanaa, visited Kathir Biryani during his time in Trichy. His visit brought great joy and excitement to our entire team.
+We were honored to serve our signature Seeraga Samba biryani, prepared with our traditional family recipe and passion. Moments like these motivate us to continue delivering authentic taste and warm hospitality to everyone who visits our restaurant.`, image: originStory },
+  { title: "Serving 1,500 Guests with Our Signature Biryani Combo", desc: `One of the proud milestones in our journey was receiving a catering order for 1,500 guests. For this special event, we prepared and served our signature Seeraga Samba biryani as part of a complete combo that included kola urundai, raita, thalicha, and a water bottle for every guest.
+
+With careful planning, teamwork, and dedication, our family ensured that every plate maintained the same authentic taste and quality that Kathir Biryani is known for. Successfully serving such a large gathering was a memorable moment that reflected the trust people place in our food and service.`, image: chickenBiryani },
 ];
 
 const MomentsPage = () => {
@@ -80,9 +88,6 @@ const MomentsPage = () => {
                   className="w-full lg:w-1/2 space-y-4 text-center lg:text-left"
                   data-aos={idx % 2 === 0 ? "fade-left" : "fade-right"}
                 >
-                  <span className="inline-block px-4 py-1 bg-saffron/10 text-saffron font-sans text-xs font-bold uppercase tracking-widest rounded-full">
-                    {moment.date}
-                  </span>
                   <h3 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-gold">
                     {moment.title}
                   </h3>

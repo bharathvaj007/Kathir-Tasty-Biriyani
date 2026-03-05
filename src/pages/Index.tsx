@@ -14,18 +14,22 @@ import storyDum from "@/assets/story-dum.jpg";
 const storyContent = [
   {
     src: originStory,
-    title: "Where It All Began",
-    text: "Kathir Tasty Biryani began its journey decades ago as a modest kitchen in the heart of KK Nagar, Trichy. What started with a single copper pot and a passion for authentic flavors has today evolved into a culinary destination for biryani lovers across Tamil Nadu."
+    title: "Humble Beginnings (2003–2008)",
+    text: `Our journey began in 2003, when Manivel (father) and Kathir (son) worked as daily wage employees at a well-known hotel named Famous. From the very basics to mastering the art of cooking, we learned everything through dedication and hard work. Those five years shaped our knowledge, discipline, and passion for authentic biryani.
+Inspired by our experience and driven by a dream to create something of our own, we decided to start our own restaurant in KK Nagar, Trichy.`
   },
   {
     src: storySpices,
-    title: "The Secret Spices",
-    text: "As the years passed, our 'secret masala' became a legend in Trichy. We never switched to machines; our spices are still crushed by hand to retain their essential oils and vibrant punch. This commitment to traditional methods allowed us to grow without losing our soul."
+    title: "The Leap of Faith – A Dream Written on a Dhoti (2008)",
+    text: `On July 4, 2008, Kathir Biryani was born in KK Nagar, Trichy. In the initial days, we couldn’t even afford a proper banner for our shop. We hand-painted our shop name on a dhoti cloth and used it as our first banner.
+The flavor of our biryani is inspired by the taste we learned in our early days, enriched with our own special recipes and signature masalas that create a truly unique taste and aroma.
+With continuous hard work, consistency, and the love of our customers, Kathir Biryani has grown to become one of the top 5 most-selling biryani spots in Trichy.`
   },
   {
     src: storyDum,
-    title: "The Art of Dum",
-    text: "Today, we stand as a testament to the 'Dum' technique. By sealing the pots with dough and slow-cooking over firewood, we ensure every grain of rice is infused with the juice of the meat. It's a slow process in a fast world, but one bite tells you why it's worth it."
+    title: "The Modern Legacy – Three Generations of Family Secret",
+    text: `What makes us special is that we do not have hired master chefs. Our biryani is cooked by our family — father and son — and now proudly by the next generation, Gokul M., who holds a Bachelor’s degree in Hotel Management.
+We have successfully prepared and delivered more than 5,000 orders, including weddings, special occasions, and party events. Our magical flavor has been served in many of Trichy’s leading marriage halls, and we are honored to be the preferred choice for major banks and hospitals for their celebrations and special events.`
   },
 ];
 
@@ -145,6 +149,47 @@ const Index = () => {
         </div>
       </section>
 
+{/* NEW SLOGAN SECTION */}
+      <section className="py-20 md:py-32 bg-white dark:bg-[#1b120e] relative overflow-hidden transition-colors duration-500">
+        <div className="container mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 40 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="max-w-4xl mx-auto"
+          >
+            <motion.div
+              initial={{ rotate: -10 }}
+              whileInView={{ rotate: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              {/* Replaced Icon with Custom Logo */}
+              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-8 rounded-full bg-white shadow-xl border border-gray-200 dark:border-gray-700 flex items-center justify-center overflow-hidden p-1.5">
+                <img 
+                  src="/logo.png" 
+                  alt="Kathir Tasty Biriyani Logo" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </motion.div>
+            
+            {/* Adjusted font sizes from 7xl down to 5xl, and improved line-height for longer text */}
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-gray-900 dark:text-white leading-relaxed md:leading-tight">
+              At Kathir Biryani, every plate we serve carries our family’s <br className="hidden md:block" /> dedication, tradition, and <span className="text-gradient-gold">love for authentic taste.</span>
+            </h2>
+            
+            <motion.div 
+              initial={{ width: 0 }}
+              whileInView={{ width: "6rem" }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="mt-8 md:mt-10 h-1 bg-spice-gradient mx-auto rounded-full" 
+            />
+          </motion.div>
+        </div>
+      </section>
+      {/* END SLOGAN SECTION */}
+
       {/* CTA SECTION - Full Dark Theme */}
       <section className="relative py-24 md:py-40 overflow-hidden bg-[#120c09] text-white">
         <div className="absolute bottom-0 left-0 w-full h-full pointer-events-none overflow-hidden">
@@ -248,7 +293,6 @@ const StoryBlock = ({ item, index }: { item: any; index: number }) => {
         style={{ y: textY }}
         className="w-full lg:w-1/2 space-y-4 md:space-y-6 text-center lg:text-left"
       >
-        <span className="text-saffron font-sans font-bold tracking-widest uppercase text-xs">Step 0{index + 1}</span>
         <h3 className="text-3xl md:text-5xl font-display font-bold text-gray-900 dark:text-gold">{item.title}</h3>
         <p className="text-base md:text-lg text-gray-700 dark:text-warm-cream/70 leading-relaxed font-body">{item.text}</p>
         <div className={`w-12 md:w-20 h-1 bg-gold/30 ${index % 2 !== 0 ? "lg:ml-auto" : ""}`} />
