@@ -11,7 +11,7 @@ import originStory from "@/assets/origin-story.jpg";
 import storySpices from "@/assets/story-spices.jpg";
 import storyDum from "@/assets/story-dum.jpg";
 
-const storyContent = [
+const storyContent =[
   {
     src: originStory,
     title: "Humble Beginnings (2003–2008)",
@@ -34,13 +34,13 @@ We have successfully prepared and delivered more than 5,000 orders, including we
 ];
 
 const Index = () => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const[mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const containerRef = useRef(null);
 
   // Scroll Progress Tracking
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"]
+    offset:["start start", "end end"]
   });
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -51,8 +51,8 @@ const Index = () => {
   };
 
   // Parallax values for Hero
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 1.1]);
+  const heroOpacity = useTransform(scrollYProgress,[0, 0.2], [1, 0]);
+  const heroScale = useTransform(scrollYProgress,[0, 0.2], [1, 1.1]);
 
   return (
     <motion.div
@@ -149,7 +149,7 @@ const Index = () => {
         </div>
       </section>
 
-{/* NEW SLOGAN SECTION */}
+      {/* NEW SLOGAN SECTION */}
       <section className="py-20 md:py-32 bg-white dark:bg-[#1b120e] relative overflow-hidden transition-colors duration-500">
         <div className="container mx-auto px-4 text-center">
           <motion.div
@@ -164,17 +164,19 @@ const Index = () => {
               whileInView={{ rotate: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              {/* Replaced Icon with Custom Logo */}
-              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-8 rounded-full bg-white shadow-xl border border-gray-200 dark:border-gray-700 flex items-center justify-center overflow-hidden p-1.5">
+              <div className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-8 shrink-0 rounded-full bg-white shadow-2xl border-2 border-gray-100 dark:border-gray-700 flex items-center justify-center overflow-hidden">
                 <img 
                   src="/logo.png" 
                   alt="Kathir Tasty Biriyani Logo" 
-                  className="w-full h-full object-contain"
+                  /* 
+                    Changed from translate-y-2 to: translate-y-4 md:translate-y-5
+                    This is the perfect middle ground!
+                  */
+                  className="w-full h-full object-contain scale-[1.5] translate-y-4 md:translate-y-5"
                 />
               </div>
             </motion.div>
             
-            {/* Adjusted font sizes from 7xl down to 5xl, and improved line-height for longer text */}
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-gray-900 dark:text-white leading-relaxed md:leading-tight">
               At Kathir Biryani, every plate we serve carries our family’s <br className="hidden md:block" /> dedication, tradition, and <span className="text-gradient-gold">love for authentic taste.</span>
             </h2>
@@ -194,7 +196,7 @@ const Index = () => {
       <section className="relative py-24 md:py-40 overflow-hidden bg-[#120c09] text-white">
         <div className="absolute bottom-0 left-0 w-full h-full pointer-events-none overflow-hidden">
           <motion.div
-            animate={{ opacity: [0.3, 0.5, 0.3], scale: [1, 1.05, 1] }}
+            animate={{ opacity: [0.3, 0.5, 0.3], scale:[1, 1.05, 1] }}
             transition={{ duration: 5, repeat: Infinity }}
             className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-[140%] h-[100%] bg-[radial-gradient(circle,rgba(255,80,0,0.1)_0%,transparent_70%)] blur-[80px]"
           />
@@ -206,7 +208,7 @@ const Index = () => {
             <motion.div
               key={i}
               initial={{ y: 200, x: Math.random() * 800, opacity: 0 }}
-              animate={{ y: -400, opacity: [0, 0.2, 0] }}
+              animate={{ y: -400, opacity:[0, 0.2, 0] }}
               transition={{ duration: 10 + Math.random() * 5, repeat: Infinity, delay: i * 2 }}
               className="absolute bottom-0 w-32 h-32 bg-white/5 blur-3xl rounded-full"
             />
@@ -259,11 +261,11 @@ const StoryBlock = ({ item, index }: { item: any; index: number }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"]
+    offset:["start end", "end start"]
   });
 
-  const imgY = useTransform(scrollYProgress, [0, 1], [-50, 50]);
-  const textY = useTransform(scrollYProgress, [0, 1], [30, -30]);
+  const imgY = useTransform(scrollYProgress,[0, 1],[-50, 50]);
+  const textY = useTransform(scrollYProgress,[0, 1],[30, -30]);
 
   return (
     <div

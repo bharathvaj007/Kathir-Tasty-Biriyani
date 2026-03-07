@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-// Removed UtensilsCrossed from imports
 import { Phone, MapPin, Clock, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -37,22 +36,26 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
           
           {/* Section 1: Brand */}
-          {/* Fixed typo: changed 'var' to 'variants' so animation works */}
           <motion.div variants={itemVariants} className="space-y-4">
             <div className="flex items-center gap-3">
-              
-              {/* Updated Logo Container */}
-              <div className="w-12 h-12 rounded-full bg-white shadow-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center overflow-hidden p-1 shrink-0">
-                <img 
-                  src="/logo.png" 
-                  alt="Kathir Tasty Biriyani Logo" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
-
-              <h3 className="text-2xl font-display font-bold text-gradient-gold">
-                Kathir Tasty Biriyani
-              </h3>
+              {/* Logo */}
+              <Link to="/" className="flex items-center gap-3">
+                <motion.div
+                  whileHover={{ rotate: 180 }}
+                  /* Matches Navbar sizes perfectly and adds shrink-0 so it stays a perfect circle */
+                  className="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-full bg-white shadow-md border border-gray-200 dark:border-gray-700 flex items-center justify-center overflow-hidden"
+                >
+                  <img 
+                    src="/logo.png" 
+                    alt="Kathir Tasty Biryani" 
+                    /* Exactly identical to your Navbar: scale-[1.5] and translate-y-2 */
+                    className="w-full h-full object-contain scale-[1.5] translate-y-2"
+                  />
+                </motion.div>
+                <span className="text-2xl font-display font-bold text-gradient-gold">
+                  Kathir Tasty Biryani
+                </span>
+              </Link>
             </div>
             <p className="font-body text-sm leading-relaxed opacity-80 max-w-xs">
               Serving the finest biryani in Trichy since generations. Every grain tells a story of tradition, love, and authentic flavors.

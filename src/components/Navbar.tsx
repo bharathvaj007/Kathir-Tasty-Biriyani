@@ -21,18 +21,20 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-[#0f0a07]/95 backdrop-blur-md border-b border-gold/20 transition-colors duration-500">
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
+         {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             <motion.div
               whileHover={{ rotate: 180 }}
-              /* Changed background to white, added a subtle border and shadow */
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md border border-gray-200 dark:border-gray-700 flex items-center justify-center overflow-hidden p-1"
+              className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white shadow-md border border-gray-200 dark:border-gray-700 flex items-center justify-center overflow-hidden"
             >
               <img 
                 src="/logo.png" 
                 alt="Kathir Tasty Biryani" 
-                /* Changed to object-contain so the logo text isn't cut off */
-                className="w-full h-full object-contain"
+                /* 
+                  scale-150: makes it much bigger
+                  translate-y-2: pushes the image down to compensate for the invisible space
+                */
+                className="w-full h-full object-contain scale-150 translate-y-2"
               />
             </motion.div>
             <span className="text-xl md:text-2xl font-display font-bold text-gradient-gold">
